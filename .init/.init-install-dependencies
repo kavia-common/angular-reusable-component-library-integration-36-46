@@ -1,0 +1,4 @@
+{
+    "command": "npm install --legacy-peer-deps",
+    "working_directory": "/home/kavia/workspace/code-generation/angular-reusable-component-library-integration-36-46/custom_ui_library"
+}
