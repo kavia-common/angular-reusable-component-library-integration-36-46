@@ -15,7 +15,9 @@ const config: StorybookConfig = {
     autodocs: 'tag'
   },
   staticDirs: [
+    // Expose library styles if needed by MDX/docs
     { from: '../projects/ui-health/src/lib/styles', to: '/styles' },
+    // Keep public optional; Storybook 8 supports skipUnresolved to avoid startup failure if the folder is absent.
     { from: './public', to: '/public', skipUnresolved: true }
   ],
   webpackFinal: async (config) => {

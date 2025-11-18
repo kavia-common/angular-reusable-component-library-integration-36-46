@@ -24,3 +24,15 @@ Result: Step 1 COMPLETE.
 
 Next in Step 2:
 - Optionally add Docs MDX and controls refinement per component if needed.
+
+### Storybook static assets
+- The Storybook config avoids failing when `.storybook/public` is missing by using `skipUnresolved: true`.
+- A placeholder `.storybook/public/favicon.ico.README.txt` is included. Add a real `favicon.ico` there if desired.
+
+### Running Storybook
+- Ensure dependencies are installed, then run:
+  - `npm run storybook` (serves at http://localhost:6006)
+  - `npm run build-storybook` to generate static build in `storybook-static/`.
+- Global styles are loaded via `.storybook/preview.ts`:
+  - `src/styles.css` (Tailwind + Prime imports)
+  - `projects/ui-health/src/lib/styles/tokens.css` (design tokens)

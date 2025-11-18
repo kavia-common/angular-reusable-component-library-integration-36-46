@@ -1,8 +1,11 @@
 import type { Preview } from '@storybook/angular';
 
-// Import global stylesheet to ensure Tailwind layers and tokens are present
+/**
+ * Global styles for Storybook:
+ * - src/styles.css: Tailwind layers, Prime styles, and base resets
+ * - tokens.css: library tokens to ensure variables are always present
+ */
 import '../src/styles.css';
-// Explicitly import tokens.css as well, to guarantee variables exist even if consumers customize styles.css
 import '../projects/ui-health/src/lib/styles/tokens.css';
 
 const preview: Preview = {
