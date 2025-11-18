@@ -1,24 +1,12 @@
 /* Prime styles (resolved by PostCSS with Node resolver) */
 @import "primeflex/primeflex.css";
 @import "primeicons/primeicons.css";
+/* Include library tokens BEFORE Tailwind layers to satisfy import order */
+@import "../projects/ui-health/src/lib/styles/tokens.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Ocean Professional theme variables and resets */
-:root {
-  --color-primary: #2563EB;
-  --color-secondary: #F59E0B;
-  --color-success: #F59E0B;
-  --color-error: #EF4444;
-  --color-background: #f9fafb;
-  --color-surface: #ffffff;
-  --color-text: #111827;
-
-  --radius-md: 12px;
-  --shadow-subtle: 0 1px 2px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.1);
-}
 
 /* Base resets */
 * {
@@ -27,20 +15,5 @@
   box-sizing: border-box;
 }
 
-/* Typography + background */
-html, body {
-  height: 100%;
-  background-color: var(--color-background);
-  color: var(--color-text);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
-
-/* Utility layers for the library */
-@layer components {
-  .card-surface {
-    @apply bg-surface rounded-md shadow-subtle transition-colors duration-200;
-  }
-  .muted-label {
-    @apply text-sm text-gray-500;
-  }
-}
+/* Ensure full-height backgrounds use theme tokens */
+html, body { height: 100%; }

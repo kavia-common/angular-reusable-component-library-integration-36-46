@@ -6,23 +6,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#2563EB",
-        secondary: "#F59E0B",
-        success: "#F59E0B",
-        error: "#EF4444",
-        background: "#f9fafb",
-        surface: "#ffffff",
-        text: "#111827",
+        primary: "var(--ui-primary)",
+        secondary: "var(--ui-secondary)",
+        success: "var(--ui-success)",
+        error: "var(--ui-error)",
+        background: "var(--ui-background)",
+        surface: "var(--ui-surface)",
+        text: "var(--ui-text)",
       },
       boxShadow: {
-        subtle: "0 1px 2px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.1)",
+        subtle: "var(--ui-shadow)",
       },
       borderRadius: {
-        md: "12px",
+        md: "var(--ui-radius)",
       },
       transitionProperty: {
         colors: "background-color, border-color, color, fill, stroke",
       },
+      backgroundImage: {
+        'ocean-gradient': 'linear-gradient(to bottom, rgba(59,130,246,0.1), #ffffff)'
+      }
     },
   },
   plugins: [],
