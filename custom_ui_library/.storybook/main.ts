@@ -1,24 +1,25 @@
-/**
- * PUBLIC_INTERFACE
- * Storybook main configuration for Angular 19 workspace using the Angular builder.
- * Ensures framework '@storybook/angular' is used and configDir is resolved by Angular builder targets.
- */
 import type { StorybookConfig } from '@storybook/angular';
 
 const config: StorybookConfig = {
   framework: {
     name: '@storybook/angular',
-    options: {}
+    options: {},
   },
   stories: [
-    '../projects/**/*.stories.@(ts|mdx)'
+    // Discover all stories inside the ui-health library
+    '../projects/ui-health/src/**/*.stories.@(ts|tsx|mdx)',
   ],
   addons: [
-    '@storybook/addon-essentials'
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
   ],
+  core: {
+    builder: '@storybook/builder-webpack5',
+  },
   docs: {
-    defaultName: 'Docs'
-  }
+    autodocs: 'tag',
+  },
+  staticDirs: [], // If needed later: ['.storybook/public']
 };
 
 export default config;

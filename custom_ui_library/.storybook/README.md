@@ -1,18 +1,16 @@
-# Storybook configuration (Angular builder)
+# Storybook (Angular + Builder)
 
-This Storybook is configured for Angular v19 with the Storybook v8 Angular builder.
-
-Key files:
-- main.ts: framework '@storybook/angular' with builder '@storybook/angular/webpack5'
-- preview.ts: loads global styles (src/styles.css and library tokens.css)
-- public/: static assets served at root (optional)
-
-Docs:
-- https://storybook.js.org/docs/angular/get-started/install
-- https://github.com/storybookjs/storybook/blob/next/code/frameworks/angular/README.md
+This workspace uses Storybook 8 with the Angular builder wired via angular.json.
 
 Run:
-- npm run storybook:angular (Angular builder)
-- npm run build-storybook:angular (Angular builder)
-- npm run storybook (direct CLI)
-- npm run build-storybook (direct CLI)
+- Start: npm run storybook (alias of ng run ui-health:storybook)
+- Build: npm run build-storybook (alias of ng run ui-health:build-storybook)
+
+Config:
+- Config directory: .storybook (main.ts, preview.ts)
+- Builder: @storybook/builder-webpack5
+- Framework: @storybook/angular
+
+Notes:
+- Global styles loaded from src/styles.css and projects/ui-health/src/lib/styles/tokens.css
+- Ensure Node.js >= 18 for Storybook 8

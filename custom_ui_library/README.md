@@ -70,6 +70,10 @@ Static assets:
 - If you need static assets, create `.storybook/public/` and then enable `staticDirs: ['.storybook/public']` in `.storybook/main.ts`.
 - We intentionally removed non-standard `skipUnresolved` to avoid config errors on Storybook 8.
 
+Troubleshooting:
+- If `@storybook/angular:storybook` builder is not found, run `npm install` to ensure the devDependencies are installed.
+- Requires Node.js >= 18 for Storybook 8.
+
 ## Running unit tests
 
 To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
