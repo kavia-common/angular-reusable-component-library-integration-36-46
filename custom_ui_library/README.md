@@ -7,10 +7,34 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 To start a local development server, run:
 
 ```bash
-ng serve
+npm start
+# or: ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Once the server is running, open your browser and navigate to:
+- App: http://localhost:3000 (configured in angular.json)
+- Storybook: http://localhost:6006 (see below)
+
+The application will automatically reload whenever you modify any of the source files.
+
+## How to view the sample Health Dashboard
+
+The app integrates the local @custom/ui-health library and exposes a sample Health Dashboard/Overview page composed from library components.
+
+- Default route is `/dashboard`.
+- The app redirects from `/` to `/dashboard`.
+
+Steps:
+1. Start the dev server (`npm start`).
+2. Open http://localhost:3000/dashboard (or simply http://localhost:3000).
+
+You should see:
+- Header with date-range text and an Export button.
+- Filters toolbar with range buttons and a search input.
+- Responsive grid of stat cards.
+- Two chart cards (one with a placeholder chart area).
+- A "Recent Activity" list using activity items.
+- Progress ring and bars. All styles use Tailwind + tokens.css globally.
 
 ## Code scaffolding
 
@@ -36,7 +60,7 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Storybook
+## Storybook (for @custom/ui-health library)
 
 This workspace includes Storybook 8 for the reusable UI library and uses the Angular builder for startup/build.
 
@@ -61,14 +85,12 @@ Targets:
 
 Config location:
 - The Storybook configuration is at the workspace root: `.storybook/main.ts` and `.storybook/preview.ts`.
-- Do not use obsolete direct "storybook dev" scripts; use the Angular builder scripts above.
 
 Styles:
-- Global styles are imported in `.storybook/preview.ts` (src/styles.css and the library tokens.css).
+- Global styles are loaded (src/styles.css) and the library tokens.css via angular.json to ensure tokens and Tailwind classes are available.
 
 Static assets:
 - If you need static assets, create `.storybook/public/` and then enable `staticDirs: ['.storybook/public']` in `.storybook/main.ts`.
-- We intentionally removed non-standard `skipUnresolved` to avoid config errors on Storybook 8.
 
 Troubleshooting:
 - If `@storybook/angular:storybook` builder is not found, run `npm install` to ensure the devDependencies are installed.
