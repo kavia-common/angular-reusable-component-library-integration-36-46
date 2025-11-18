@@ -1,3 +1,4 @@
-This directory is used to serve static files in Storybook.
+Optional static directory for Storybook.
+Place any static assets (e.g., favicon.ico) here to be served at the root (/) of Storybook.
 
-A real favicon.ico can be placed here if desired. This placeholder README prevents the ".storybook/public" path from being missing when Storybook starts.
+This file exists so that staticDirs with { skipUnresolved: true } can still be safely resolved in environments where strict checking is enabled.

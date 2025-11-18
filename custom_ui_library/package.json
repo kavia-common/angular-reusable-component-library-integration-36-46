@@ -9,6 +9,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:angular": "node dist/angular/server/server.mjs",
+    "storybook:angular": "ng run ui-health:storybook",
+    "build-storybook:angular": "ng run ui-health:build-storybook",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
