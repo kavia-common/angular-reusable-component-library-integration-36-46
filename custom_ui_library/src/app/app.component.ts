@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { HealthDashboardDemoComponent } from '../../projects/ui-health/src/lib/demo/health-dashboard-demo.component';
 
 @Component({
   selector: 'app-root',
-  imports: [],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  imports: [HealthDashboardDemoComponent],
+  template: `<ui-health-dashboard-demo />`,
+  styles: [``]
 })
-export class AppComponent {
-  title = 'custom_ui_library is being generated';
-}
+export class AppComponent {}

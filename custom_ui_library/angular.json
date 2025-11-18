@@ -24,10 +24,16 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "projects/ui-health/src/lib/styles/tokens.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -95,9 +101,25 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "projects/ui-health/src/lib/styles/tokens.css"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "ui-health": {
+      "projectType": "library",
+      "root": "projects/ui-health",
+      "sourceRoot": "projects/ui-health/src",
+      "prefix": "ui",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ui-health/ng-package.json",
+            "tsConfig": "projects/ui-health/tsconfig.lib.json"
           }
         }
       }

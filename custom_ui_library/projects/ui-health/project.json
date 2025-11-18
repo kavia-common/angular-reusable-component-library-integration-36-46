@@ -1,0 +1,24 @@
+{
+  "name": "ui-health",
+  "projectType": "library",
+  "root": "projects/ui-health",
+  "sourceRoot": "projects/ui-health/src",
+  "prefix": "ui",
+  "architect": {
+    "build": {
+      "builder": "@angular-devkit/build-angular:ng-packagr",
+      "options": {
+        "project": "projects/ui-health/ng-package.json",
+        "tsConfig": "projects/ui-health/tsconfig.lib.json"
+      }
+    },
+    "test": {
+      "builder": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "projects/ui-health/src/test.ts",
+        "tsConfig": "projects/ui-health/tsconfig.spec.json",
+        "karmaConfig": "karma.conf.js"
+      }
+    }
+  }
+}
