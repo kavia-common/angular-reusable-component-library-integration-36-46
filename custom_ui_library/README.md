@@ -38,22 +38,31 @@ This will compile your project and store the build artifacts in the `dist/` dire
 
 ## Storybook
 
-This workspace includes Storybook 8 for the reusable UI library.
+This workspace includes Storybook 8 for the reusable UI library and uses the Angular builder for startup/build.
 
-- Start Storybook:
+- Start Storybook (Angular builder target):
   ```bash
   npm run storybook
+  # equivalent: ng run ui-health:storybook
   ```
   Then open http://localhost:6006.
 
-- Build static Storybook:
+- Build static Storybook (Angular builder):
   ```bash
   npm run build-storybook
+  # equivalent: ng run ui-health:build-storybook
   ```
 
-Notes:
+Config location:
+- The Storybook configuration is at the workspace root: `.storybook/main.ts` and `.storybook/preview.ts`.
+- A shim `.storybook/main.js` re-exports from `main.ts` to help Storybook CLI and automigration detect the config path.
+
+Styles:
 - Global styles are imported in `.storybook/preview.ts` (src/styles.css and the library tokens.css).
-- Static directories are configured in `.storybook/main.ts`. The optional `.storybook/public` path is marked with `skipUnresolved: true`; a placeholder file is included so startup will not fail even if no assets are present.
+
+Static assets:
+- If you need static assets, create `.storybook/public/` and then enable `staticDirs: ['.storybook/public']` in `.storybook/main.ts`.
+- We intentionally removed non-standard `skipUnresolved` to avoid config errors on Storybook 8.
 
 ## Running unit tests
 

@@ -26,8 +26,8 @@ Next in Step 2:
 - Optionally add Docs MDX and controls refinement per component if needed.
 
 ### Storybook static assets
-- The Storybook config avoids failing when `.storybook/public` is missing by using `skipUnresolved: true`.
-- A placeholder `.storybook/public/favicon.ico.README.txt` is included. Add a real `favicon.ico` there if desired.
+- Updated: Removed non-standard `skipUnresolved` usage. If you need assets, create `.storybook/public/` and add `staticDirs: ['.storybook/public']` in `.storybook/main.ts`.
+- We no longer include a placeholder file by default to avoid confusion; the config works without static assets.
 
 ### Running Storybook
 - Ensure dependencies are installed, then run:

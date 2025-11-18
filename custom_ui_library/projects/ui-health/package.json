@@ -1,0 +1,12 @@
+{
+  "name": "ui-health",
+  "version": "1.0.0",
+  "description": "Reusable Angular components for a Health Dashboard, styled with Tailwind and aligned with the \"Ocean Professional\" theme.",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
