@@ -40,22 +40,28 @@ This will compile your project and store the build artifacts in the `dist/` dire
 
 This workspace includes Storybook 8 for the reusable UI library and uses the Angular builder for startup/build.
 
-- Start Storybook (Angular builder target):
+Run:
+- Start Storybook via Angular builder
   ```bash
   npm run storybook
   # equivalent: ng run ui-health:storybook
   ```
   Then open http://localhost:6006.
 
-- Build static Storybook (Angular builder):
+- Build a static Storybook site
   ```bash
   npm run build-storybook
   # equivalent: ng run ui-health:build-storybook
   ```
 
+Targets:
+- angular.json contains ui-health targets:
+  - "storybook" -> builder "@storybook/angular:storybook" with "configDir": ".storybook"
+  - "build-storybook" -> builder "@storybook/angular:build-storybook" with "configDir": ".storybook"
+
 Config location:
 - The Storybook configuration is at the workspace root: `.storybook/main.ts` and `.storybook/preview.ts`.
-- A shim `.storybook/main.js` re-exports from `main.ts` to help Storybook CLI and automigration detect the config path.
+- Do not use obsolete direct "storybook dev" scripts; use the Angular builder scripts above.
 
 Styles:
 - Global styles are imported in `.storybook/preview.ts` (src/styles.css and the library tokens.css).
